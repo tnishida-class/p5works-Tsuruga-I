@@ -5,10 +5,17 @@ function setup() {
   // noStroke();
   background(255);
 
+
   let d = height / 9; // 縞1本の太さ
 
   for(let i = 0; i < 9; i++){
     // BLANK[1] (hint: 縞の色を交互に変えるには2で割った余りを使おう)
+    if (i%2==0){
+      fill(blue)
+    }
+    else{
+      fill (255)
+    }
     rect(0, i * d, width, (i + 1) * d);
   }
 
@@ -17,5 +24,8 @@ function setup() {
   rect(0, 0, size, size);
 
   fill(255);
+  strokeWeight (0);
   // BLANK[2] (hint: 白い十字を描くには rect を二つ描こう)
+   rect (2/5 * size, 0, 1/5 * size , size)
+   rect (0, 2/5 * size, size, 1/5 * size)
 }
